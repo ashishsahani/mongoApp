@@ -1,9 +1,9 @@
 const mongoose   = require('mongoose');
 
-  mongoose.Promise=global.Promise;
+mongoose.Promise=global.Promise;
 
 
-  before((done) => {
+before((done) => {
     mongoose.connect('mongodb://localhost/users_test');
     mongoose.connection
       .once('open',() => {done();})
@@ -12,9 +12,7 @@ const mongoose   = require('mongoose');
       });
   })
 
-
-
-  beforeEach((done) => {
+beforeEach((done) => {
     mongoose.connection.collections.users.drop(() => {
       done();
     });
