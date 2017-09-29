@@ -4,7 +4,8 @@ const mongoose    = require('mongoose'),
 
 // creating a schema for users
 const UserSchema  = new Schema ({
-  name  : String
+  name  : String ,
+  postCount : Number
 });
 
 
